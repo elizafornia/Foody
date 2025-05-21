@@ -107,9 +107,7 @@ struct ShakeView: View {
                             .fontWeight(.semibold)
                             .padding(.bottom, 8)
                         
-                        // Menu Items (Quantity = 1)
-                        // Menu Items (Quantity = 1)
-                        // Menu Items (Quantity = 1)
+                    
                         VStack(spacing: 12) {
                             ForEach(viewModel.recommendedMenus, id: \.id) { item in
                                 MenuItemCard(item: item)
@@ -146,7 +144,7 @@ struct ShakeView: View {
                                 )
                             },
                             whatsAppNumber: firstItem.stall.whatsAppNumber,
-                            estimatedTotal: viewModel.recommendedMenus.reduce(0) { $0 + $1.price }, // Sum of all items (quantity=1)
+                            estimatedTotal: viewModel.recommendedMenus.reduce(0) { $0 + $1.price },
                             onPlaceOrder: {
                                 // Reset after order
                                 viewModel.recommendedMenus = []
@@ -182,13 +180,13 @@ struct ShakeView: View {
     }
 }
 
-// Reusable Menu Item Card
+
 struct MenuItemCard: View {
     let item: FavoriteItem
     
     var body: some View {
         HStack(spacing: 16) {
-            // Gunakan imageName dari Menu jika tersedia, fallback ke FavoriteItem
+          
             let imageName = item.menu.imageName.isEmpty ? item.imageName ?? "" : item.menu.imageName
             
             if !imageName.isEmpty {

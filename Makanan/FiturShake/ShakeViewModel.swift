@@ -33,6 +33,3 @@ class ShakeViewModel: ObservableObject {
     }
 }
 
-//#Preview {
-//    ShakeViewModel()
-//}

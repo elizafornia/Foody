@@ -55,7 +55,7 @@ struct EmptyFavoritesView: View {
                 .padding(.bottom, 60)
             }
             .padding(.horizontal, 16)
-            .navigationBarHidden(true) // Sembunyikan navbar di EmptyFavoritesView
+            .navigationBarHidden(true) 
         }
     }
 }

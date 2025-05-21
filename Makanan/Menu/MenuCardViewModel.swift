@@ -15,7 +15,7 @@ class MenuCardViewModel: ObservableObject {
     private var onQuantityChanged: (Int) -> Void
     
     // Debug identifier
-    private let debugPrefix = "🍔 [MenuCardViewModel]"
+    private let debugPrefix = "[MenuCardViewModel]"
     
     init(menu: Menu, stall: Stall, initialQuantity: Int, onQuantityChanged: @escaping (Int) -> Void) {
         self.menu = menu
@@ -98,9 +98,3 @@ class MenuCardViewModel: ObservableObject {
         """)
     }
 }
-
-// Extension for Notification.Name
-//extension Notification.Name {
-//    static let didAddFavorite = Notification.Name("didAddFavorite")
-//    static let didRemoveFavorite = Notification.Name("didRemoveFavorite")
-//}

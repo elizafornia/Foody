@@ -104,7 +104,6 @@ class Menu: Identifiable {
     }
 }
 
-// MARK: - Preview Data (Dummy non-persistent for testing)
 extension Stall {
     static let all: [Stall] = {
         let mustafa = Stall(

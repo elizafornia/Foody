@@ -41,7 +41,7 @@ struct ShakeDetector: UIViewControllerRepresentable {
 
         override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
             if motion == .motionShake {
-                // Memastikan haptic feedback berjalan pada main thread
+               
                 DispatchQueue.main.async {
                     let generator = UIImpactFeedbackGenerator(style: .heavy) // Menggunakan style .heavy untuk haptic lebih kuat
                     generator.prepare()

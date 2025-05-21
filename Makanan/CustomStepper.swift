@@ -54,7 +54,7 @@ struct CustomStepper: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @State var quantity = 0 // Mulai dari 0 untuk melihat efeknya
+        @State var quantity = 0 
         var body: some View {
             VStack {
                 CustomStepper(value: $quantity)

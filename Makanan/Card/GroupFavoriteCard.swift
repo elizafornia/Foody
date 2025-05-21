@@ -48,7 +48,7 @@ struct GroupFavoriteCard: View {
         }
     }
 }
-// Extension untuk corner radius tertentu
+// Extension corner radius
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))

@@ -14,7 +14,7 @@ struct TotalView: View {
 
     var body: some View {
         HStack {
-            // Cart icon with price
+        
             Button(action: onCartTapped) {
                 HStack(spacing: 8) {
                     Image(systemName: "cart.fill")

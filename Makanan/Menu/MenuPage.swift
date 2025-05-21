@@ -8,19 +8,6 @@ import SwiftUI
 import SwiftData
 
 
-extension View {
-    func hideKeyboardOnTap() -> some View {
-        self.gesture(
-            TapGesture().onEnded {
-                UIApplication.shared.sendAction(
-                    #selector(UIResponder.resignFirstResponder),
-                    to: nil, from: nil, for: nil
-                )
-            }
-        )
-    }
-}
-
 struct MenuPage: View {
     @Environment(\.modelContext) private var modelContext
     @State private var orderItemsState: [OrderItem] = []
@@ -230,9 +217,9 @@ struct MenuPage: View {
     private func saveOrder() {
         do {
             try modelContext.save()
-            print("✅ Order saved successfully")
+            print("Order saved successfully")
         } catch {
-            print("❌ Failed to save order: \(error)")
+            print("Failed to save order: \(error)")
         }
     }
 
@@ -252,8 +239,15 @@ struct MenuPage: View {
     }
 }
 
-// MARK: - Warna Utama
-extension Color {
-    static let orangePrimary = Color(red: 1, green: 0.44, blue: 0.24)
+extension View {
+    func hideKeyboardOnTap() -> some View {
+        self.gesture(
+            TapGesture().onEnded {
+                UIApplication.shared.sendAction(
+                    #selector(UIResponder.resignFirstResponder),
+                    to: nil, from: nil, for: nil
+                )
+            }
+        )
+    }
 }
-

@@ -22,15 +22,3 @@ enum SharedKeys {
 func saveFavoritesToShared(_ favorites: [String]) {
     sharedDefaults?.set(favorites, forKey: SharedKeys.favoriteMenus)
 }
-
-// MARK: - Load dari Shared UserDefaults
-//func loadFavoriteMenus() -> [String] {
-//    return sharedDefaults?.stringArray(forKey: SharedKeys.favoriteMenus) ?? []
-//}
-
-//func loadFavoriteMenus() -> [String] {
-//    let sharedDefaults = UserDefaults(suiteName: "group.com.yourcompany.MakananApp")
-//    return sharedDefaults?.stringArray(forKey: "favoriteMenus") ?? []
-//}
-//
-

@@ -12,7 +12,7 @@ class FavoriteViewModel: ObservableObject {
     @Published var menus: [Menu] = []  // Daftar menu yang ada
     @Published var recommendedMenus: [FavoriteItem] = [] // Menu yang direkomendasikan
     @Published var shakeResultText: String? = nil
-//    @Query var favoriteItems: [FavoriteItem]
+
 
     private var modelContext: ModelContext
 
@@ -49,18 +49,14 @@ class FavoriteViewModel: ObservableObject {
 
     // Mendapatkan rekomendasi menu berdasarkan favorit
     func getShakeRecommendation(favoriteMenus: [FavoriteItem]) {
-        print("🔄 SHAKE DETECTED")
-        print("📦 Favorite count: \(menus.filter { $0.isFavorited }.count)")
-        print("📦 menu: \(menus.count)")
-//        print("📦 fav: \(favoriteItems.count)")
-        
-
-//        let favoriteMenus = /*.filter { $0.isFavorited }*/
+        print("SHAKE DETECTED")
+        print("Favorite count: \(menus.filter { $0.isFavorited }.count)")
+        print("menu: \(menus.count)")
 
         if favoriteMenus.isEmpty {
             shakeResultText = "Favoritkan lebih banyak menu dulu!"
             recommendedMenus = []
-            print("❌ RECOMMENDATION: Tidak ada menu favorit.")
+            print(" RECOMMENDATION: Tidak ada menu favorit.")
             return
         }
 
@@ -74,15 +70,15 @@ class FavoriteViewModel: ObservableObject {
                 let selectedMenus = Array(menusInStall.shuffled().prefix(2))
                 recommendedMenus = selectedMenus
                 shakeResultText = " \(selectedMenus[0].stall.name): \(selectedMenus[0].menuName), \(selectedMenus[1].menuName)"
-                print("✅ RECOMMENDATION: Two random menus from the same stall")
+                print("RECOMMENDATION: Two random menus from the same stall")
                 return
             }
         }
 
-        // ❌ Tidak ada kombinasi yang cocok
+        // Tidak ada kombinasi yang cocok
         recommendedMenus = []
         shakeResultText = "Hmmm belum ada hasil yang cocok nih untuk kamu,\n yuk favoritkan lebih banyak menu lagi!"
-        print("❌ RECOMMENDATION: Tidak ada yang cocok")
+        print("RECOMMENDATION: Tidak ada yang cocok")
     }
 }
 

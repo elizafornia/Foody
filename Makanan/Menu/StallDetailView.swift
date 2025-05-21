@@ -21,8 +21,6 @@ struct StallDetailView: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
 
-//            Text(stall.description)
-//                .font(.body)
         }
         .padding()
     }
